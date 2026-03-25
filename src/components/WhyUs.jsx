@@ -11,7 +11,7 @@ const reasons = [
     stat: '24',
     unit: '/7',
     title: 'Availability',
-    body: 'We answer when others don\'t. Real people pick up the phone — day, night, weekends, holidays.',
+    body: "We answer when others don't. Real people pick up the phone — day, night, weekends, holidays.",
   },
   {
     stat: '$0',
@@ -32,16 +32,19 @@ function ReasonItem({ reason: r, index: i }) {
   return (
     <div
       ref={ref}
-      className="fade-section px-0 lg:px-8 first:pl-0 last:pr-0 py-10 sm:py-0"
+      className="fade-section py-12 lg:py-0 lg:px-10 first:pl-0 last:pr-0 border-b lg:border-b-0 lg:border-l border-gray-200 first:border-l-0"
       style={{ transitionDelay: `${i * 100}ms` }}
     >
-      <div className="flex items-baseline gap-1 mb-4">
-        <span className="text-6xl md:text-7xl font-black text-[#2563EB] leading-none tabular-nums">
+      {/* Blue top rule */}
+      <div className="w-8 h-[3px] bg-[#2563EB] mb-6" />
+
+      <div className="flex items-baseline gap-1 mb-5">
+        <span className="text-[4.5rem] md:text-[5rem] font-black text-gray-900 leading-none tabular-nums tracking-tighter">
           {r.stat}
         </span>
-        <span className="text-3xl font-black text-gray-300 leading-none">{r.unit}</span>
+        <span className="text-2xl font-black text-[#2563EB] leading-none">{r.unit}</span>
       </div>
-      <h3 className="text-lg font-extrabold text-gray-900 mb-3 tracking-tight">{r.title}</h3>
+      <h3 className="text-sm font-black text-gray-400 uppercase tracking-[0.12em] mb-3">{r.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed">{r.body}</p>
     </div>
   )
@@ -53,14 +56,22 @@ export default function WhyUs() {
   return (
     <section id="why-us" className="bg-white py-20 md:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <div ref={titleRef} className="fade-section mb-16">
-          <p className="text-[#2563EB] text-xs font-bold tracking-widest uppercase mb-3">Why Choose Us</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight max-w-xl">
-            Why Boca Raton<br />Chooses Us.
-          </h2>
+        <div ref={titleRef} className="fade-section flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-6 h-[2px] bg-[#2563EB]" />
+              <span className="text-[#2563EB] text-[11px] font-bold tracking-[0.18em] uppercase">Why Choose Us</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-none">
+              Why Boca Raton<br />Chooses Us.
+            </h2>
+          </div>
+          <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+            Every number below is backed by real customer results — not marketing copy.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-0">
           {reasons.map((r, i) => (
             <ReasonItem key={r.title} reason={r} index={i} />
           ))}
