@@ -16,17 +16,17 @@ export default function Contact() {
   const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true) }
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div ref={titleRef} className="fade-section mb-12">
+    <section id="contact" className="bg-white py-12 md:py-20">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6">
+        <div ref={titleRef} className="fade-section mb-8 md:mb-12">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-6 h-[2px] bg-[#0EA5E9] flex-shrink-0" />
-            <span className="text-[#0EA5E9] text-[11px] font-bold tracking-[0.18em] uppercase">Reach Out</span>
+            <span className="text-[#0EA5E9] text-[10px] font-bold tracking-widest uppercase">Reach Out</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-none">Get a Free Quote.</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-none">Get a Free Quote.</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Left — Info */}
           <div ref={infoRef} className="fade-section">
             <div className="border-l-4 border-[#0EA5E9] pl-5 mb-10">
@@ -37,7 +37,7 @@ export default function Contact() {
               <p className="text-gray-400 text-xs mt-2 font-medium">Free estimates · English &amp; Spanish</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <p className={labelClass}>Address</p>
                 <p className="text-gray-700 text-sm font-semibold leading-relaxed">10546 Wiles Rd<br />Coral Springs, FL 33076</p>

@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0C1A2E] text-white">
       <div className="h-[3px] bg-[#0EA5E9]" />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 md:py-18">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
 
           {/* Brand */}
@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-gray-600 text-[11px]">© 2025 Ocean Blue Pressure Cleaning & Soft Wash, LLC. All rights reserved.</p>
           <p className="text-gray-700 text-[11px]">Licensed & Insured · Serving South Florida</p>
         </div>

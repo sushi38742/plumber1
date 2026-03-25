@@ -19,8 +19,8 @@ function PhotoTile({ photo, index: i }) {
 export default function Gallery() {
   const titleRef = useFadeIn()
   return (
-    <section className="bg-white py-16 md:py-24 border-t border-gray-100">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section className="bg-white py-12 md:py-20 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6">
         <div ref={titleRef} className="fade-section mb-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-6 h-[2px] bg-[#0EA5E9] flex-shrink-0" />
