@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white border-b border-gray-200' : 'bg-white border-b border-transparent'}`}>
       <div className="h-[3px] bg-[#0EA5E9]" />
-      <div className="max-w-6xl mx-auto px-6 h-[68px] flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-[68px] flex items-center justify-between">
 
         {/* Logo */}
         <a href="#" className="no-underline flex items-center gap-3">
@@ -64,7 +64,7 @@ export default function Nav() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-5">
+        <div className="md:hidden bg-white border-t border-gray-100 px-4 sm:px-6 py-5">
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="flex items-center justify-between py-3.5 text-[13px] font-semibold text-gray-700 border-b border-gray-100 no-underline">
               {l.label}<span className="text-gray-300">›</span>
