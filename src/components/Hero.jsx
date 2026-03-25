@@ -1,3 +1,6 @@
+const HERO_IMG = 'https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1200'
+const PIPES_IMG = 'https://images.unsplash.com/photo-gdEPyXql_74?w=1200&q=80&fit=crop'
+
 export default function Hero() {
   return (
     <section className="pt-[71px] bg-white overflow-hidden min-h-screen flex flex-col">
@@ -71,51 +74,56 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT — dark panel */}
-        <div className="hidden lg:flex w-[420px] xl:w-[480px] flex-shrink-0 bg-[#0F172A] flex-col justify-between p-14 relative overflow-hidden">
-          {/* Background texture lines */}
-          <div className="absolute inset-0 opacity-[0.04]" style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 48px)',
-          }} />
+        {/* RIGHT — full bleed photo with overlay stats */}
+        <div className="hidden lg:block w-[420px] xl:w-[500px] flex-shrink-0 relative overflow-hidden">
+          {/* Photo */}
+          <img
+            src={HERO_IMG}
+            alt="Licensed plumber working under sink"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-[#0F172A]/20" />
 
           {/* Blue accent corner */}
-          <div className="absolute top-0 right-0 w-16 h-16 bg-[#2563EB]" />
+          <div className="absolute top-0 right-0 w-12 h-12 bg-[#2563EB] z-10" />
 
-          <div className="relative z-10">
-            <p className="text-[#2563EB] text-[11px] font-bold tracking-[0.18em] uppercase mb-10">
+          {/* Stats overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-12 z-10">
+            <p className="text-[#2563EB] text-[11px] font-bold tracking-[0.18em] uppercase mb-8">
               Why Homeowners Trust Us
             </p>
 
-            <div className="space-y-10">
+            <div className="space-y-8 mb-10">
               {[
                 { num: '48', label: 'Verified Google Reviews', sub: '5.0 star average' },
                 { num: '24/7', label: 'Emergency Availability', sub: 'Real people answer the phone' },
                 { num: '100%', label: 'Upfront Pricing', sub: 'No hidden fees, ever' },
               ].map((item) => (
-                <div key={item.num} className="flex items-start gap-5">
-                  <div className="text-3xl font-black text-[#2563EB] leading-none tabular-nums w-20 flex-shrink-0 pt-0.5">
+                <div key={item.num} className="flex items-start gap-4">
+                  <div className="text-2xl font-black text-[#2563EB] leading-none tabular-nums w-16 flex-shrink-0 pt-0.5">
                     {item.num}
                   </div>
                   <div>
                     <div className="text-white font-bold text-sm leading-snug">{item.label}</div>
-                    <div className="text-gray-500 text-xs mt-1">{item.sub}</div>
+                    <div className="text-gray-400 text-xs mt-0.5">{item.sub}</div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* Bottom CTA strip */}
-          <div className="relative z-10 mt-12 pt-10 border-t border-white/10">
-            <p className="text-gray-500 text-xs mb-4 uppercase tracking-widest font-semibold">Call us directly</p>
-            <a
-              href="tel:5614187689"
-              className="text-white text-2xl font-black no-underline hover:text-[#2563EB] transition-colors tracking-tight"
-            >
-              (561) 418-7689
-            </a>
+            <div className="pt-8 border-t border-white/10">
+              <p className="text-gray-500 text-[10px] uppercase tracking-widest font-bold mb-2">Call us directly</p>
+              <a
+                href="tel:5614187689"
+                className="text-white text-2xl font-black no-underline hover:text-[#2563EB] transition-colors tracking-tight"
+              >
+                (561) 418-7689
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
   )

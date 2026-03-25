@@ -1,5 +1,7 @@
 import { useFadeIn } from '../hooks/useFadeIn'
 
+const PIPES_IMG = 'https://images.unsplash.com/photo-gdEPyXql_74?w=1400&q=80&fit=crop'
+
 const steps = [
   {
     num: '01',
@@ -47,8 +49,16 @@ export default function HowItWorks() {
   const titleRef = useFadeIn()
 
   return (
-    <section className="bg-gray-50 py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background photo with overlay */}
+      <img
+        src={PIPES_IMG}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-white/92" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div ref={titleRef} className="fade-section flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-4">
